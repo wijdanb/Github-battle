@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-//we can compose components together ALSO using props.children because if im going to be changing the contents of a certain section of a component when I invoke the component or use the component, I can use props.children to make it a little more dynamic 
-export default function PlayerPreview({avatar,username,children}){
+ export default function PlayerPreview({avatar,username,children}){
 	return(
 			<div>
 				<div className ='column'>
