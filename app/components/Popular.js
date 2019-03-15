@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
 import Loading from './Loading';
 
-function SelectLanguage({selectedLanguage, onSelect}){ //desturcturing props object
+function SelectLanguage({selectedLanguage, onSelect}){ 
 	var languages =['All', 'JavaScript', 'Ruby','Java','CSS','Python'];
 	return(
 			<ul className ='languages'>
 				{languages.map((lang) => (
 						<li style={lang === selectedLanguage ? {color:'#d0021b'}:null}  
-//	    onClick={props.onSelect.bind(null,lang)} is now this. No need for bind because arrow functions will use the //same //context as its parent. onSelect is basically the function for updateLanguage and it returns an object  
+   
 						    onClick={() => onSelect(lang)}
 							key ={lang}>
 							{lang}
@@ -22,7 +22,7 @@ function SelectLanguage({selectedLanguage, onSelect}){ //desturcturing props obj
 function RepoGrid({ repos }){
 	return(
 		<ul className ='popular-list'>
-			{repos.map(({name, stargazers_count, owner,html_url },index) => ( //having a bracket because Im returning an object and its multiline. Implicit return also. Desturcturing repos to get name,stargazers count, html_url and owner from repos object
+			{repos.map(({name, stargazers_count, owner,html_url },index) => ( 
 				<li key={name} className ='popular-item'>
 					<div className ='popular-rank'>#{index + 1}</div>
 					<ul className='space-list-items'>
@@ -70,7 +70,7 @@ class Popular extends React.Component{
 
 
 	updateLanguage = async (lang) => {  
-		this.setState(() => ({ //if I have a function in a function like here, just delete the function and keep //that parenthesis made behinde function e.g : this.setState(function()...  is now this.setState(() => ...
+		this.setState(() => ({  
 				selectedLanguage:lang,
 				repos:null
 		}));
