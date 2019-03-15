@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-//typically with functional components, instead of exporting at the bottom, ill export the default the function
-export default function Nav(){ //main default thing im exporting from this Nav.js file is this functional component 
+ 
+export default function Nav(){  
 	 return(
 		<ul className ='nav'>
 			<li>
