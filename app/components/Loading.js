@@ -24,14 +24,14 @@ class Loading extends React.Component{
 	};	
 
 	state = {
-		text: this.props.text //Im not getting passed a props arg so i have to add a this. before props.text
+		text: this.props.text  
 	}
 
 
 	 
  
 	componentDidMount(){ 
-//because I use this.props alot, im going to destructure props //it at the top so it looks //better. Im going to get the text and speed
+ 
 		const {text,speed} = this.props
 		const stopper = text +'...';
 		
@@ -44,7 +44,7 @@ class Loading extends React.Component{
 				? this.setState(() => ({text: this.props.text}))
 				: this.setState((prevState) => ({text: prevState.text + '.' }))  	
 			
-	}, speed)  //no longer creating a new context 
+	}, speed)   
 }
 
 componentWillUnmount(){ 
