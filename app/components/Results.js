@@ -10,7 +10,7 @@ import Loading from './Loading';
 function Profile({info}){
  
 	return(
-		//all this is the block of text after the battle. Its saying: show their name IF info.name is thing. Same thing with info.location and info.company. Show their followers and following and if they have a blog show that too
+		 
 			<PlayerPreview avatar ={info.avatar_url} username ={info.login}>
 				<ul className ='space-list-items'>
 					{info.className	&&	<li>{info.name}</li>}
@@ -53,7 +53,7 @@ class Results extends React.Component{
 	}
 
 	async componentDidMount(){
-		 const {playerOneName,playerTwoName} = queryString.parse(this.props.location.search);//destructure the result of calling .parse
+		 const {playerOneName,playerTwoName} = queryString.parse(this.props.location.search);
 
 		 const players = await battle([	
 			playerOneName,  
@@ -70,14 +70,14 @@ class Results extends React.Component{
 
 				}))
 			}
-			//if there is no error, we got a correct response from the github API then:
+		 
 			this.setState(() =>({
 					error: null,
 					winner: results[0],
 					loser: results[1],
 					loading: false
 
-			})); // the "this" in this.setState is the SAME as the "this" on bind(this)
+			}));  
  
 	}
 
